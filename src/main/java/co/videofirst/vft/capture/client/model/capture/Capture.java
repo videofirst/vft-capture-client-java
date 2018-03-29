@@ -24,9 +24,8 @@
 package co.videofirst.vft.capture.client.model.capture;
 
 import co.videofirst.vft.capture.client.enums.TestPassStatus;
-import co.videofirst.vft.capture.client.model.DisplayCapture;
 import co.videofirst.vft.capture.client.model.TestLog;
-import co.videofirst.vft.capture.client.model.Upload;
+import co.videofirst.vft.capture.client.model.display.DisplayCapture;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;

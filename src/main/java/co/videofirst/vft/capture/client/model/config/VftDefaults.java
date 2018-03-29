@@ -21,50 +21,34 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package co.videofirst.vft.capture.client.model;
+package co.videofirst.vft.capture.client.model.config;
+
+import java.util.Map;
 
 /**
- * Display capture class.
+ * Model class which contains default properties.
  *
  * @author Bob Marks
  */
-public class DisplayCapture {
+public class VftDefaults {
 
-    private int x;
-    private int y;
-    private int width; // "width" = full screen
-    private int height; // "height" = full screen
+    private Map<String, String> categories;
+    private DisplayConfig display;
 
-    public int getX() {
-        return x;
+    public Map<String, String> getCategories() {
+        return categories;
     }
 
-    public void setX(int x) {
-        this.x = x;
+    public void setCategories(Map<String, String> categories) {
+        this.categories = categories;
     }
 
-    public int getY() {
-        return y;
+    public DisplayConfig getDisplay() {
+        return display;
     }
 
-    public void setY(int y) {
-        this.y = y;
-    }
-
-    public int getWidth() {
-        return width;
-    }
-
-    public void setWidth(int width) {
-        this.width = width;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
+    public void setDisplay(DisplayConfig display) {
+        this.display = display;
     }
 
 }

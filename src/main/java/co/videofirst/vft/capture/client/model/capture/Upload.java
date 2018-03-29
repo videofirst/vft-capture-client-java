@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package co.videofirst.vft.capture.client.model;
+package co.videofirst.vft.capture.client.model.capture;
 
 import co.videofirst.vft.capture.client.enums.UploadState;
 import java.time.LocalDateTime;

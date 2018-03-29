@@ -23,9 +23,9 @@
  */
 package co.videofirst.vft.capture.client.model.info;
 
-import co.videofirst.vft.capture.client.model.UploadStatus;
-import co.videofirst.vft.capture.client.model.VftDefaults;
 import co.videofirst.vft.capture.client.model.capture.CaptureStatus;
+import co.videofirst.vft.capture.client.model.capture.UploadStatus;
+import co.videofirst.vft.capture.client.model.config.VftDefaults;
 import java.util.List;
 
 /**

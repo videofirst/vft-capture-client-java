@@ -30,12 +30,12 @@ import static co.videofirst.vft.capture.client.api.impl.DefaultCaptureApi.HttpMe
 import co.videofirst.vft.capture.client.api.CaptureApi;
 import co.videofirst.vft.capture.client.exception.VftCaptureException;
 import co.videofirst.vft.capture.client.gson.LocalDateTimeTypeAdapter;
-import co.videofirst.vft.capture.client.model.UploadStatus;
 import co.videofirst.vft.capture.client.model.capture.Capture;
 import co.videofirst.vft.capture.client.model.capture.CaptureFinishParams;
 import co.videofirst.vft.capture.client.model.capture.CaptureStartParams;
 import co.videofirst.vft.capture.client.model.capture.CaptureStatus;
 import co.videofirst.vft.capture.client.model.capture.CaptureSummary;
+import co.videofirst.vft.capture.client.model.capture.UploadStatus;
 import co.videofirst.vft.capture.client.model.info.Info;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
