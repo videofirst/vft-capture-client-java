@@ -25,7 +25,7 @@ package co.videofirst.vft.capture.client.api.impl;
 
 import co.videofirst.vft.capture.client.annotations.Vft;
 import co.videofirst.vft.capture.client.enums.LogTier;
-import co.videofirst.vft.capture.client.enums.TestPassStatus;
+import co.videofirst.vft.capture.client.enums.TestStatus;
 import co.videofirst.vft.capture.client.model.TestLog;
 import co.videofirst.vft.capture.client.model.capture.Capture;
 import co.videofirst.vft.capture.client.model.capture.CaptureFinishParams;
@@ -39,8 +39,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import test.VftRunner;
 
 /**
  * Unit test to test the methods of DefaultCaptureApi.
@@ -49,7 +47,6 @@ import test.VftRunner;
  *
  * @author Bob Marks
  */
-@RunWith(VftRunner.class)
 public class DefaultCaptureApiTest {
 
     @Vft
@@ -100,7 +97,7 @@ public class DefaultCaptureApiTest {
         testLog.setTs(LocalDateTime.of(2001, 01, 02, 03, 04, 05));
 
         CaptureFinishParams captureFinishParams = new CaptureFinishParams();
-        captureFinishParams.setTestStatus(TestPassStatus.fail);
+        captureFinishParams.setTestStatus(TestStatus.fail);
         captureFinishParams.setDescription("awesome description");
         captureFinishParams.setError("awesome error");
         captureFinishParams.setMeta(asMap("a", "1", "b", "2"));

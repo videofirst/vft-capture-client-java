@@ -37,17 +37,16 @@ import org.junit.Test;
 public class CaptureUtilsTest {
 
     @Test
-    public void shouldConvertExceptionToString () {
+    public void shouldConvertExceptionToString() {
 
         try {
             throw new RuntimeException("this is an exception");
-        }
-        catch(RuntimeException re) {
+        } catch (RuntimeException re) {
             String message = CaptureUtils.getStackTrace(new Error(re));
             System.out.println(message);
-            assertThat (message).startsWith("java.lang.Error: java.lang.RuntimeException: this is an exception");
+            assertThat(message)
+                .startsWith("java.lang.Error: java.lang.RuntimeException: this is an exception");
         }
-
     }
 
     @Test
@@ -55,10 +54,12 @@ public class CaptureUtilsTest {
         assertThat(getFeatureFromTestClass("Search")).isEqualTo("Search");
         assertThat(getFeatureFromTestClass("SearchTest")).isEqualTo("Search");
         assertThat(getFeatureFromTestClass("TestSearch")).isEqualTo("Test Search");
-        assertThat(getFeatureFromTestClass("Test__Search__")).isEqualTo("Test Search");
+        assertThat(getFeatureFromTestClass("Test___Search__")).isEqualTo("Test Search");
         assertThat(getFeatureFromTestClass("AdvancedSearchTest")).isEqualTo("Advanced Search");
-        assertThat(getFeatureFromTestClass("Advanced_search_Test_")).isEqualTo("Advanced search");
-        assertThat(getFeatureFromTestClass("__Advanced_search___Test__")).isEqualTo("Advanced search");
+        assertThat(getFeatureFromTestClass("Advanced_search_Belfast_Test_"))
+            .isEqualTo("Advanced search");
+        assertThat(getFeatureFromTestClass("__Advanced_search___Test__"))
+            .isEqualTo("Advanced search");
         assertThat(getFeatureFromTestClass("")).isEqualTo("");
         assertThat(getFeatureFromTestClass("l")).isEqualTo("L");
         assertThat(getFeatureFromTestClass("lowercase")).isEqualTo("Lowercase");

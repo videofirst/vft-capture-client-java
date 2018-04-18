@@ -6,7 +6,7 @@ import co.videofirst.vft.capture.client.annotations.Vft;
 import co.videofirst.vft.capture.client.api.CaptureApi;
 import co.videofirst.vft.capture.client.configuration.CaptureConfig;
 import co.videofirst.vft.capture.client.enums.CaptureState;
-import co.videofirst.vft.capture.client.enums.TestPassStatus;
+import co.videofirst.vft.capture.client.enums.TestStatus;
 import co.videofirst.vft.capture.client.exception.VftCaptureException;
 import co.videofirst.vft.capture.client.model.capture.CaptureFinishParams;
 import co.videofirst.vft.capture.client.model.capture.CaptureStartParams;
@@ -117,7 +117,7 @@ public class VftRuleStatement extends Statement {
 
         if (captureStatus.getState() == CaptureState.recording) {
             CaptureFinishParams finishParams = new CaptureFinishParams();
-            finishParams.setTestStatus(TestPassStatus.fail);
+            finishParams.setTestStatus(TestStatus.fail);
             finishParams.setError(e.getMessage());
             finishParams.setStackTrace(CaptureUtils.getStackTrace(e));
             captureStatus = captureApi.finish(finishParams);
@@ -130,7 +130,7 @@ public class VftRuleStatement extends Statement {
 
         if (captureStatus.getState() == CaptureState.recording) {
             CaptureFinishParams finishParams = new CaptureFinishParams();
-            finishParams.setTestStatus(TestPassStatus.pass);
+            finishParams.setTestStatus(TestStatus.pass);
             captureApi.finish(finishParams);
         }
 

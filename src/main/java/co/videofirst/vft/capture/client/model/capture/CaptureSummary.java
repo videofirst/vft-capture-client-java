@@ -23,7 +23,7 @@
  */
 package co.videofirst.vft.capture.client.model.capture;
 
-import co.videofirst.vft.capture.client.enums.TestPassStatus;
+import co.videofirst.vft.capture.client.enums.TestStatus;
 import java.time.LocalDateTime;
 import java.util.Map;
 
@@ -41,7 +41,7 @@ public class CaptureSummary {
     private LocalDateTime started;
     private LocalDateTime finished;
     private String format;
-    private TestPassStatus testStatus;
+    private TestStatus testStatus;
 
     public String getId() {
         return id;
@@ -99,11 +99,11 @@ public class CaptureSummary {
         this.format = format;
     }
 
-    public TestPassStatus getTestStatus() {
+    public TestStatus getTestStatus() {
         return testStatus;
     }
 
-    public void setTestStatus(TestPassStatus testStatus) {
+    public void setTestStatus(TestStatus testStatus) {
         this.testStatus = testStatus;
     }
 

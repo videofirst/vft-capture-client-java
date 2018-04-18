@@ -29,6 +29,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
+import co.videofirst.vft.capture.client.annotations.Sid;
 import co.videofirst.vft.capture.client.annotations.Vft;
 import co.videofirst.vft.capture.client.annotations.VftBackground;
 import co.videofirst.vft.capture.client.annotations.VftBorder;
@@ -74,6 +75,7 @@ public class SearchTest {
         border = @VftBorder(color = "#0099ff", width = 3, padding = 2),
         text = @VftText()
     )
+    @Sid(1943)
     public void shouldSearchByCity() {
         open("http://www.google.com");
         $(By.name("q")).shouldBe(visible).setValue("kiev");

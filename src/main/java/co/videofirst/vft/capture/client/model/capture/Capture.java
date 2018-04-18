@@ -23,7 +23,8 @@
  */
 package co.videofirst.vft.capture.client.model.capture;
 
-import co.videofirst.vft.capture.client.enums.TestPassStatus;
+import co.videofirst.vft.capture.client.enums.CaptureType;
+import co.videofirst.vft.capture.client.enums.TestStatus;
 import co.videofirst.vft.capture.client.model.TestLog;
 import co.videofirst.vft.capture.client.model.display.DisplayCapture;
 import java.time.LocalDateTime;
@@ -38,9 +39,11 @@ import java.util.Map;
 public class Capture {
 
     private String id;
+    private Long scenarioId;
     private Map<String, String> categories;
     private String feature;
     private String scenario;
+    private CaptureType type;
     private String description;
     private LocalDateTime started;
     private LocalDateTime finished;
@@ -49,7 +52,7 @@ public class Capture {
     private DisplayCapture capture;
     private Map<String, String> meta;
     private Map<String, String> environment;
-    private TestPassStatus testStatus;
+    private TestStatus testStatus;
     private String testError;
     private List<TestLog> testLogs;
     private Upload upload;
@@ -60,6 +63,14 @@ public class Capture {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public Long getScenarioId() {
+        return scenarioId;
+    }
+
+    public void setScenarioId(Long scenarioId) {
+        this.scenarioId = scenarioId;
     }
 
     public Map<String, String> getCategories() {
@@ -84,6 +95,14 @@ public class Capture {
 
     public void setScenario(String scenario) {
         this.scenario = scenario;
+    }
+
+    public CaptureType getType() {
+        return type;
+    }
+
+    public void setType(CaptureType type) {
+        this.type = type;
     }
 
     public String getDescription() {
@@ -150,11 +169,11 @@ public class Capture {
         this.environment = environment;
     }
 
-    public TestPassStatus getTestStatus() {
+    public TestStatus getTestStatus() {
         return testStatus;
     }
 
-    public void setTestStatus(TestPassStatus testStatus) {
+    public void setTestStatus(TestStatus testStatus) {
         this.testStatus = testStatus;
     }
 

@@ -23,6 +23,7 @@
  */
 package co.videofirst.vft.capture.client.model.capture;
 
+import co.videofirst.vft.capture.client.enums.CaptureType;
 import co.videofirst.vft.capture.client.model.config.DisplayConfig;
 import java.util.Map;
 
@@ -37,6 +38,11 @@ public class CaptureStartParams {
 
     private String feature;
     private String scenario;
+
+    // Optional
+
+    private CaptureType type;
+    private Long scenarioId;
     private Map<String, String> categories;
     private String record;
     private String force;
@@ -45,7 +51,7 @@ public class CaptureStartParams {
     private DisplayConfig display;
 
     public boolean record() {
-        return record == null || "true".equalsIgnoreCase(record.trim());
+        return record == null || "true" .equalsIgnoreCase(record.trim());
     }
 
     public String getFeature() {
@@ -62,6 +68,22 @@ public class CaptureStartParams {
 
     public void setScenario(String scenario) {
         this.scenario = scenario;
+    }
+
+    public CaptureType getType() {
+        return type;
+    }
+
+    public void setType(CaptureType type) {
+        this.type = type;
+    }
+
+    public Long getScenarioId() {
+        return scenarioId;
+    }
+
+    public void setScenarioId(Long scenarioId) {
+        this.scenarioId = scenarioId;
     }
 
     public Map<String, String> getCategories() {

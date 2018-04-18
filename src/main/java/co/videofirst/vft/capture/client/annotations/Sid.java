@@ -21,15 +21,25 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package co.videofirst.vft.capture.client.enums;
+package co.videofirst.vft.capture.client.annotations;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 /**
- * Enum which describes
+ * Scenario ID - use this to link to an actual scenario in the VFT app.
  *
  * @author Bob Marks
  */
-public enum TestPassStatus {
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.METHOD)
+public @interface Sid {
 
-    pass, fail, error, aborted
+    /**
+     * Link to a scenario
+     */
+    long value();
 
 }

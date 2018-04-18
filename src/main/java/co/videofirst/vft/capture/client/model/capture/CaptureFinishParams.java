@@ -23,7 +23,7 @@
  */
 package co.videofirst.vft.capture.client.model.capture;
 
-import co.videofirst.vft.capture.client.enums.TestPassStatus;
+import co.videofirst.vft.capture.client.enums.TestStatus;
 import co.videofirst.vft.capture.client.model.TestLog;
 import java.util.List;
 import java.util.Map;
@@ -35,18 +35,23 @@ import java.util.Map;
  */
 public class CaptureFinishParams {
 
-    private TestPassStatus testStatus;
+    // Mandatory
+
+    private TestStatus testStatus;  // optional ?
+
+    // Optional
+
     private Map<String, String> meta;
     private String description;
     private String error;
     private String stackTrace;
     private List<TestLog> logs;
 
-    public TestPassStatus getTestStatus() {
+    public TestStatus getTestStatus() {
         return testStatus;
     }
 
-    public void setTestStatus(TestPassStatus testStatus) {
+    public void setTestStatus(TestStatus testStatus) {
         this.testStatus = testStatus;
     }
 
