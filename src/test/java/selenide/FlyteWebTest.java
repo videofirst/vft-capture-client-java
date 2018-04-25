@@ -27,7 +27,6 @@ import static com.codeborne.selenide.Condition.present;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-import co.videofirst.vft.capture.client.annotations.Vft;
 import co.videofirst.vft.capture.client.junit4.VftRule;
 import org.junit.Rule;
 import org.junit.Test;
@@ -41,7 +40,6 @@ public class FlyteWebTest {
     public VftRule vftRule = new VftRule(this);
 
     @Test
-    @Vft(description = "Test opening the contact page")
     public void shouldOpenContactPage() {
 
         open("https://www.flyte.ie/");
